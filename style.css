@@ -1,0 +1,971 @@
+/* ==========================================================================
+   THE MAHAL — 10D Drone Experience & Imperial Palace Template CSS
+   ========================================================================== */
+
+:root {
+    --bg-dark: #050504;
+    --bg-card: #0F0D0B;
+    --bg-surface: #181512;
+    --gold-primary: #D4AF37;
+    --gold-light: #F9E8B6;
+    --gold-dark: #9A7B1C;
+    --accent-gold-glow: rgba(212, 175, 55, 0.4);
+    --text-primary: #F8F6F0;
+    --text-muted: #A59F94;
+    --text-dark: #121212;
+    --font-heading: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+    --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+
+/* HOTLINE BAR */
+
+.hotline-bar {
+    background: linear-gradient(90deg, #18140E, #2A2214, #18140E);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+    padding: 0.5rem 0;
+    font-size: 0.8rem;
+    color: var(--gold-light);
+}
+
+.hotline-right {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.phone-link,
+.whatsapp-btn {
+    color: var(--text-primary);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: color 0.3s;
+}
+
+.phone-link:hover,
+.whatsapp-btn:hover {
+    color: var(--gold-primary);
+}
+
+.whatsapp-btn {
+    color: #25D366;
+    font-weight: 600;
+}
+
+
+/* PRELOADER */
+
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #030302;
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.preloader-content {
+    text-align: center;
+    width: 320px;
+}
+
+.monogram {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    color: var(--gold-primary);
+    border: 1px solid var(--gold-primary);
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+}
+
+.preloader-title {
+    font-family: var(--font-heading);
+    letter-spacing: 0.3em;
+    font-size: 1.4rem;
+}
+
+.preloader-sub {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    color: var(--gold-primary);
+    margin-bottom: 1.2rem;
+}
+
+.loader-bar-bg {
+    width: 100%;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.loader-bar-fill {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, var(--gold-dark), var(--gold-primary));
+    transition: width 0.1s ease;
+}
+
+.loader-percentage {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+
+/* NAVBAR */
+
+.navbar {
+    position: fixed;
+    top: 32px;
+    /* Adjusted below hotline bar */
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 1.2rem 3rem;
+    transition: var(--transition-smooth);
+}
+
+.navbar.scrolled {
+    top: 0;
+    padding: 0.9rem 3rem;
+    background: rgba(5, 5, 4, 0.92);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: var(--text-primary);
+    text-decoration: none;
+}
+
+.logo-icon {
+    color: var(--gold-primary);
+}
+
+.nav-menu {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: var(--gold-light);
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.sound-toggle {
+    background: transparent;
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    color: var(--text-primary);
+    padding: 0.45rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+    color: var(--text-dark);
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    padding: 0.75rem 1.6rem;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 25px rgba(212, 175, 55, 0.5);
+}
+
+.btn-secondary {
+    border: 1px solid var(--gold-primary);
+    color: var(--gold-primary);
+    padding: 0.8rem 2rem;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    transition: all 0.3s;
+}
+
+.btn-secondary:hover {
+    background: var(--gold-primary);
+    color: var(--text-dark);
+}
+
+
+/* ==========================================================================
+   1. PINNED DRONE 8-STAGE CANVAS & HUD OVERLAY
+   ========================================================================== */
+
+.pinned-cinematic-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+.canvas-sticky-wrapper {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    perspective: 1200px;
+}
+
+#hero-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    transform-style: preserve-3d;
+    transition: transform 0.1s ease-out;
+}
+
+.canvas-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(5, 5, 4, 0.2) 0%, rgba(5, 5, 4, 0.88) 85%);
+    z-index: 2;
+    background-clip: text;
+    pointer-events: none;
+}
+
+
+/* DRONE HUD OVERLAY */
+
+.drone-hud-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+    pointer-events: none;
+    padding: 6rem 4rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hud-top {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    color: var(--gold-primary);
+    font-family: monospace;
+}
+
+.hud-bottom {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    font-family: monospace;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.hud-progress-bar {
+    width: 200px;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+#hud-progress-fill {
+    width: 12.5%;
+    height: 100%;
+    background: var(--gold-primary);
+    transition: width 0.3s ease;
+}
+
+
+/* CAPTIONS */
+
+.cinematic-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    width: 90%;
+    max-width: 900px;
+    text-align: center;
+    z-index: 3;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.8s ease, transform 0.8s ease, visibility 0.8s;
+    pointer-events: none;
+}
+
+.cinematic-caption.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+    pointer-events: auto;
+}
+
+.caption-badge {
+    font-size: 0.75rem;
+    letter-spacing: 0.35em;
+    color: var(--gold-primary);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.caption-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 5.5vw, 5rem);
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 1.2rem;
+}
+
+.gold-gradient {
+    background: linear-gradient(135deg, #FFF, var(--gold-light), var(--gold-primary));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-style: italic;
+}
+
+.caption-desc {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    font-weight: 300;
+    max-width: 650px;
+    margin: 0 auto 2rem;
+}
+
+.scroll-mouse-hint {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+.mouse-icon {
+    width: 22px;
+    height: 36px;
+    border: 1px solid rgba(212, 175, 55, 0.5);
+    border-radius: 12px;
+    position: relative;
+}
+
+.wheel {
+    width: 3px;
+    height: 6px;
+    background: var(--gold-primary);
+    border-radius: 2px;
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: scrollAnim 1.8s infinite;
+}
+
+@keyframes scrollAnim {
+    0% {
+        transform: translate(-50%, 0);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, 14px);
+        opacity: 0;
+    }
+}
+
+
+/* ==========================================================================
+   2. INTERACTIVE 10D ROOM INSPECTION & HOTSPOTS
+   ========================================================================== */
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.suites-10d-section {
+    padding: 10rem 0;
+    background: var(--bg-dark);
+}
+
+.section-header.center {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 5rem;
+}
+
+.section-badge {
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    color: var(--gold-primary);
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+    display: block;
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.4rem, 4vw, 3.8rem);
+    font-weight: 400;
+    margin-bottom: 1.2rem;
+}
+
+.header-desc {
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+
+
+/* 10D ROOM CARDS */
+
+.room-10d-card {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 3rem;
+    background: var(--bg-card);
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 5rem;
+}
+
+.room-10d-card.reverse {
+    grid-template-columns: 1fr 1.4fr;
+}
+
+.room-10d-viewer {
+    position: relative;
+    height: 580px;
+    overflow: hidden;
+    background: #000;
+}
+
+.room-10d-viewer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease, filter 0.8s ease;
+}
+
+.view-mode-tag {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    background: rgba(5, 5, 4, 0.85);
+    border: 1px solid var(--gold-primary);
+    color: var(--gold-light);
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    padding: 0.35rem 0.9rem;
+    z-index: 2;
+}
+
+
+/* HOTSPOTS */
+
+.hotspot {
+    position: absolute;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.hotspot-pulse {
+    width: 20px;
+    height: 20px;
+    background: var(--gold-primary);
+    border-radius: 50%;
+    display: block;
+    box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7);
+    animation: pulse 1.8s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.8);
+    }
+    70% {
+        transform: scale(1.1);
+        box-shadow: 0 0 0 16px rgba(212, 175, 55, 0);
+    }
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);
+    }
+}
+
+.hotspot-label {
+    position: absolute;
+    left: 28px;
+    top: -5px;
+    white-space: nowrap;
+    background: rgba(15, 13, 11, 0.92);
+    border: 1px solid var(--gold-primary);
+    color: var(--text-primary);
+    padding: 0.3rem 0.8rem;
+    font-size: 0.75rem;
+    border-radius: 2px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    opacity: 0.9;
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.hotspot:hover .hotspot-label {
+    opacity: 1;
+    transform: translateX(5px);
+}
+
+
+/* ROOM SIDEBAR */
+
+.room-10d-sidebar {
+    padding: 3rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.room-no {
+    font-family: monospace;
+    font-size: 0.8rem;
+    color: var(--gold-primary);
+    letter-spacing: 0.2em;
+}
+
+.room-10d-sidebar h3 {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    margin: 0.5rem 0 1rem;
+    font-weight: 400;
+}
+
+.room-desc {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+.room-features-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-bottom: 2.5rem;
+}
+
+.feature-tag {
+    font-size: 0.85rem;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.feature-tag i {
+    color: var(--gold-primary);
+}
+
+.room-pricing-box {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1.5rem;
+}
+
+.price-val {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    color: var(--gold-primary);
+    margin-bottom: 1.2rem;
+}
+
+.price-val span {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-style: normal;
+}
+
+.contact-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn-whatsapp {
+    background: #25D366;
+    color: #FFF;
+    padding: 0.75rem 1.4rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 2px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+
+/* EXPERIENCES */
+
+.experiences-section {
+    padding: 8rem 0;
+    background: var(--bg-surface);
+}
+
+.exp-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.exp-card {
+    background: var(--bg-card);
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    padding: 2.5rem 1.8rem;
+    border-radius: 4px;
+    transition: var(--transition-smooth);
+}
+
+.exp-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--gold-primary);
+}
+
+.exp-icon {
+    font-size: 2.5rem;
+    color: var(--gold-primary);
+    margin-bottom: 1.2rem;
+}
+
+.exp-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+    font-weight: 400;
+}
+
+.exp-card p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 300;
+}
+
+
+/* RESERVATION BANNER */
+
+.reservation-banner {
+    position: relative;
+    padding: 10rem 2rem;
+    background: url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=2000&auto=format&fit=crop') center/cover fixed;
+    text-align: center;
+}
+
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(5, 5, 4, 0.85);
+}
+
+.banner-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.banner-content h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 5vw, 4.2rem);
+    margin: 1rem 0;
+    font-weight: 300;
+}
+
+.banner-sub {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    max-width: 650px;
+    margin: 0 auto 3rem;
+}
+
+.banner-contact-card {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    margin-bottom: 3rem;
+    background: rgba(15, 13, 11, 0.9);
+    border: 1px solid var(--gold-primary);
+    padding: 2rem;
+    border-radius: 4px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-align: left;
+}
+
+.contact-item i {
+    font-size: 2.2rem;
+    color: var(--gold-primary);
+}
+
+.contact-item span {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    display: block;
+}
+
+.contact-item h4 {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    color: var(--gold-light);
+}
+
+.cta-btn-group {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.btn-primary.large,
+.btn-secondary.large {
+    padding: 1rem 2.5rem;
+    font-size: 0.9rem;
+}
+
+
+/* FOOTER */
+
+.site-footer {
+    background: #030302;
+    padding-top: 5rem;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.5fr;
+    gap: 3rem;
+    margin-bottom: 4rem;
+}
+
+.footer-brand p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    max-width: 320px;
+}
+
+.footer-links h4 {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    color: var(--gold-primary);
+    margin-bottom: 1.2rem;
+}
+
+.footer-links ul li {
+    margin-bottom: 0.6rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 1.8rem 0;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social-links {
+    display: flex;
+    gap: 1.2rem;
+    font-size: 1.1rem;
+}
+
+
+/* MODAL POPUP FOR 10D HOTSPOTS */
+
+.hotspot-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 999999;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.hotspot-modal.active {
+    display: flex;
+}
+
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+}
+
+.modal-card {
+    position: relative;
+    z-index: 2;
+    background: var(--bg-card);
+    border: 1px solid var(--gold-primary);
+    width: 90%;
+    max-width: 650px;
+    padding: 3rem;
+    border-radius: 4px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9);
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: transparent;
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    color: var(--text-primary);
+    font-size: 1.4rem;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-close-btn:hover {
+    background: var(--gold-primary);
+    color: var(--text-dark);
+}
+
+@media (max-width: 1024px) {
+    .room-10d-card,
+    .room-10d-card.reverse {
+        grid-template-columns: 1fr;
+    }
+    .exp-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+    .banner-contact-card {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .nav-menu {
+        display: none;
+    }
+}

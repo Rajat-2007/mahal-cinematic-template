@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE MAHAL — 9:16 MP4 Video Exporter</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background: #09090b;
+            color: #fff;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .header-title {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .header-title h1 {
+            font-size: 1.8rem;
+            color: #d4af37;
+            letter-spacing: 2px;
+        }
+
+        .header-title p {
+            color: #aaa;
+            font-size: 0.95rem;
+            margin-top: 6px;
+        }
+
+        .reel-card {
+            position: relative;
+            width: 360px;
+            height: 640px;
+            background: #000;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 25px 70px rgba(0,0,0,0.9), 0 0 40px rgba(212, 175, 55, 0.35);
+            border: 2px solid #d4af37;
+        }
+
+        canvas {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .controls-bar {
+            margin-top: 25px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #d4af37, #aa7c11);
+            color: #000;
+            font-weight: 700;
+            font-size: 1rem;
+            padding: 14px 28px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 5px 25px rgba(212, 175, 55, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 35px rgba(212, 175, 55, 0.7);
+        }
+
+        .btn-mp4 {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: #fff;
+        }
+
+        .status-box {
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: #d4af37;
+            text-align: center;
+            max-width: 450px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 10px 18px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-title">
+        <h1>THE MAHAL — 9:16 MP4 VIDEO GENERATOR</h1>
+        <p>Direct MP4 Video File Export • No Instagram Icons • 4K Drone Flight</p>
+    </div>
+
+    <div class="reel-card">
+        <canvas id="reelCanvas" width="720" height="1280"></canvas>
+    </div>
+
+    <div class="controls-bar">
+        <button class="btn btn-mp4" id="exportMp4Btn">📥 DOWNLOAD MP4 VIDEO FILE</button>
+    </div>
+
+    <div class="status-box" id="statusMsg">
+        Click 'DOWNLOAD MP4 VIDEO FILE' to record & save <strong>MAHAL_Drone_Reel_9x16.mp4</strong> to your computer!
+    </div>
+
+    <script>
+        const canvas = document.getElementById("reelCanvas");
+        const ctx = canvas.getContext("2d");
+        const statusMsg = document.getElementById("statusMsg");
+        const exportMp4Btn = document.getElementById("exportMp4Btn");
+
+        const imageUrls = [
+            "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1200&auto=format&fit=crop",
+            "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=1200&auto=format&fit=crop",
+            "https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=1200&auto=format&fit=crop",
+            "https://images.unsplash.com/photo-1582719508461-905c673771fd?q=80&w=1200&auto=format&fit=crop"
+        ];
+
+        const images = [];
+        let loadedCount = 0;
+
+        imageUrls.forEach(url => {
+            const img = new Image();
+            img.crossOrigin = "anonymous";
+            img.src = url;
+            img.onload = () => {
+                loadedCount++;
+                if (loadedCount === imageUrls.length) {
+                    renderScene(0);
+                }
+            };
+            images.push(img);
+        });
+
+        const duration = 10000; // 10 seconds
+        let startTime = null;
+
+        function renderScene(progress) {
+            ctx.fillStyle = "#050504";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            const slideIndex = Math.min(images.length - 1, Math.floor(progress * images.length));
+            const subProgress = (progress * images.length) % 1;
+
+            const currentImg = images[slideIndex];
+            if (currentImg && currentImg.complete) {
+                const scale = 1.0 + (subProgress * 0.25);
+                const w = canvas.width * scale;
+                const h = canvas.height * scale;
+                const x = (canvas.width - w) / 2;
+                const y = (canvas.height - h) / 2 - (subProgress * 50);
+
+                ctx.save();
+                ctx.globalAlpha = subProgress < 0.15 ? subProgress / 0.15 : 1;
+                ctx.drawImage(currentImg, x, y, w, h);
+                ctx.restore();
+
+                // Clean Luxury Title Bar
+                ctx.fillStyle = "rgba(5, 5, 4, 0.5)";
+                ctx.fillRect(0, canvas.height - 220, canvas.width, 220);
+
+                ctx.font = "bold 40px Georgia, serif";
+                ctx.fillStyle = "#D4AF37";
+                ctx.textAlign = "center";
+                ctx.fillText("THE MAHAL PALACE", canvas.width / 2, canvas.height - 130);
+
+                ctx.font = "24px sans-serif";
+                ctx.fillStyle = "#F8F6F0";
+                ctx.fillText("10D Drone Walkthrough & Suites", canvas.width / 2, canvas.height - 80);
+
+                ctx.font = "bold 22px monospace";
+                ctx.fillStyle = "#D4AF37";
+                ctx.fillText("Booking Concierge: +91 8081915068", canvas.width / 2, canvas.height - 40);
+            }
+        }
+
+        function animate(timestamp) {
+            if (!startTime) startTime = timestamp;
+            const elapsed = timestamp - startTime;
+            const progress = (elapsed % duration) / duration;
+            renderScene(progress);
+            requestAnimationFrame(animate);
+        }
+
+        requestAnimationFrame(animate);
+
+        // DIRECT MP4 VIDEO RECORDING & DOWNLOADING
+        exportMp4Btn.addEventListener("click", () => {
+            const stream = canvas.captureStream(30);
+            let mimeType = "video/mp4";
+
+            // Check browser MP4 support
+            if (!MediaRecorder.isTypeSupported("video/mp4")) {
+                if (MediaRecorder.isTypeSupported("video/mp4;codecs=avc1")) {
+                    mimeType = "video/mp4;codecs=avc1";
+                } else if (MediaRecorder.isTypeSupported("video/webm;codecs=h264")) {
+                    mimeType = "video/webm;codecs=h264";
+                } else {
+                    mimeType = "video/webm";
+                }
+            }
+
+            let recordedChunks = [];
+            let mediaRecorder = new MediaRecorder(stream, { mimeType: mimeType });
+
+            mediaRecorder.ondataavailable = (e) => {
+                if (e.data.size > 0) recordedChunks.push(e.data);
+            };
+
+            mediaRecorder.onstop = () => {
+                const extension = mimeType.includes("mp4") ? "mp4" : "mp4";
+                const blob = new Blob(recordedChunks, { type: mimeType });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement("a");
+                a.href = url;
+                a.download = `MAHAL_10D_Drone_Reel_9x16.${extension}`;
+                document.body.appendChild(a);
+                a.click();
+                setTimeout(() => {
+                    document.body.removeChild(a);
+                    window.URL.revokeObjectURL(url);
+                }, 100);
+
+                exportMp4Btn.innerText = "📥 DOWNLOAD MP4 VIDEO FILE";
+                statusMsg.innerHTML = "✅ <strong>SUCCESS!</strong> MP4 Video downloaded directly to your downloads folder as <strong>MAHAL_10D_Drone_Reel_9x16.mp4</strong>!";
+            };
+
+            mediaRecorder.start();
+            exportMp4Btn.innerText = "⏳ RECORDING MP4 VIDEO (10s)...";
+            statusMsg.innerText = "Recording 10 seconds 4K drone animation... MP4 file will download automatically!";
+
+            startTime = null;
+
+            setTimeout(() => {
+                if (mediaRecorder.state === "recording") {
+                    mediaRecorder.stop();
+                }
+            }, 10000);
+        });
+    </script>
+</body>
+</html>

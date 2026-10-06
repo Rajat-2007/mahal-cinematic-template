@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE MAHAL — 10D Drone Experience & Imperial Palace Template</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- PRELOADER CURTAIN -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-content">
+            <div class="monogram">M</div>
+            <h2 class="preloader-title">THE MAHAL</h2>
+            <p class="preloader-sub">INITIALIZING 10D DRONE CINEMATIC ENGINE</p>
+            <div class="loader-bar-bg">
+                <div class="loader-bar-fill" id="loader-progress"></div>
+            </div>
+            <p class="loader-percentage" id="loader-text">0%</p>
+        </div>
+    </div>
+
+    <!-- TOP HOTLINE BAR -->
+    <div class="hotline-bar">
+        <div class="container flex-between">
+            <span><i class="ri-shield-star-line"></i> IMPERIAL HERITAGE PALACE & RESORT — UDAIPUR, INDIA</span>
+            <div class="hotline-right">
+                <a href="tel:+918081915068" class="phone-link"><i class="ri-phone-fill"></i> Concierge Hotline: <strong>+91 8081915068</strong></a>
+                <a href="https://wa.me/918081915068" target="_blank" class="whatsapp-btn"><i class="ri-whatsapp-line"></i> WhatsApp Inquiry</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN NAVBAR -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="#" class="brand-logo">
+                <span class="logo-icon">❖</span>
+                <span class="logo-text">MAHAL</span>
+            </a>
+
+            <nav class="nav-menu">
+                <a href="#drone-experience" class="nav-link">Drone Tour</a>
+                <a href="#suites-10d" class="nav-link">10D Rooms</a>
+                <a href="#rooftop-tour" class="nav-link">Rooftop & Pool</a>
+                <a href="#experiences" class="nav-link">Experiences</a>
+                <a href="#inquire" class="nav-link">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="sound-toggle" id="soundBtn" title="Toggle Drone Ambient Audio">
+                    <i class="ri-volume-mute-line"></i>
+                    <span>Audio Synth</span>
+                </button>
+                <a href="tel:+918081915068" class="btn-primary"><i class="ri-phone-line"></i> Call +91 8081915068</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN WRAPPER -->
+    <main id="smooth-wrapper">
+        <div id="smooth-content">
+
+            <!-- ==========================================================================
+               1. 8-STAGE PINNED DRONE FLYTHROUGH CANVAS (REEL STYLE 3D ZOOM ENGINE)
+               ========================================================================== -->
+            <section class="pinned-cinematic-section" id="drone-experience">
+
+                <div class="canvas-sticky-wrapper">
+                    <canvas id="hero-canvas"></canvas>
+                    <div class="canvas-overlay"></div>
+
+                    <div class="drone-hud-overlay">
+                        <div class="hud-top">
+                            <span class="hud-tag"><i class="ri-radar-line"></i> 10D DRONE CAM // ACTIVE FLYTHROUGH</span>
+                            <span class="hud-coords">GPS: 24.5854° N, 73.6828° E</span>
+                        </div>
+                        <div class="hud-bottom">
+                            <span id="hud-slide-counter">SLIDE 01 / 08</span>
+                            <div class="hud-progress-bar">
+                                <div id="hud-progress-fill"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 8 FLOATING CINEMATIC CAPTIONS (CONTROLLED BY SCROLL PROGRESS) -->
+                    <div class="cinematic-caption caption-1 active">
+                        <span class="caption-badge">CHAPTER I — AERIAL APPROACH</span>
+                        <h1 class="caption-title">DESERT DUNES TO <span class="gold-gradient">IMPERIAL PALACE</span></h1>
+                        <p class="caption-desc">Drone camera gliding over starlit sandstone ramparts built in 1894.</p>
+                        <div class="scroll-mouse-hint">
+                            <div class="mouse-icon">
+                                <div class="wheel"></div>
+                            </div>
+                            <span>Scroll Mouse To Control 3D Drone Flight</span>
+                        </div>
+                    </div>
+
+                    <div class="cinematic-caption caption-2">
+                        <span class="caption-badge">CHAPTER II — ARCHWAY GATE DESCENT</span>
+                        <h2 class="caption-title">ENTERING THE <span class="gold-gradient">HAND-CARVED GATES</span></h2>
+                        <p class="caption-desc">Passing through royal silver doors into the grand courtyard sanctuary.</p>
+                    </div>
+
+                    <div class="cinematic-caption caption-3">
+                        <span class="caption-badge">CHAPTER III — LOTUS POOL HOVER</span>
+                        <h2 class="caption-title">REFLECTIONS OF <span class="gold-gradient">SILVER & MARBLE</span></h2>
+                        <p class="caption-desc">Water channels engineered by imperial architects two centuries ago.</p>
+                    </div>
+
+                    <div class="cinematic-caption caption-4">
+                        <span class="caption-badge">CHAPTER IV — SHEESH MAHAL FLYTHROUGH</span>
+                        <h2 class="caption-title">HALL OF A <span class="gold-gradient">THOUSAND MIRRORS</span></h2>
+                        <p class="caption-desc">Drone gliding past Belgian glass walls reflecting candle light.</p>
+                    </div>
+
+                    <div class="cinematic-caption caption-5">
+                        <span class="caption-badge">CHAPTER V — ROOFTOP INFINITY FLYBY</span>
+                        <h2 class="caption-title">SUNSET AT THE <span class="gold-gradient">PALACE ROOFTOP</span></h2>
+                        <p class="caption-desc">Panoramic views of Udaipur Lake and surrounding Aravali mountains.</p>
+                    </div>
+
+                    <div class="cinematic-caption caption-6">
+                        <span class="caption-badge">CHAPTER VI — BALCONY ROOM GLIDE</span>
+                        <h2 class="caption-title">ENTERING THE <span class="gold-gradient">MAHARAJA SUITE</span></h2>
+                        <p class="caption-desc">Camera entering through silk curtains into the private master bedroom.</p>
+                    </div>
+
+                    <div class="cinematic-caption caption-7">
+                        <span class="caption-badge">CHAPTER VII — DURBAR HALL BANQUET</span>
+                        <h2 class="caption-title">ROYAL FEAST & <span class="gold-gradient">IMPERIAL DINING</span></h2>
+                        <p class="caption-desc">Overhead view of hand-carved mahogany banquet tables and silver cutlery.</p>
+                    </div>
+
+                    <div class="cinematic-caption caption-8">
+                        <span class="caption-badge">CHAPTER VIII — 10D INTERACTIVE RESIDENCE</span>
+                        <h2 class="caption-title">STEP INSIDE YOUR <span class="gold-gradient">ROYAL SANCTUARY</span></h2>
+                        <p class="caption-desc">Explore rooms, open drawers, inspect furniture brands & outdoor views.</p>
+                        <a href="#suites-10d" class="btn-secondary">Inspect 10D Rooms Below <i class="ri-arrow-down-line"></i></a>
+                    </div>
+                </div>
+
+            </section>
+
+
+            <!-- ==========================================================================
+               2. INTERACTIVE 10D ROOM INSPECTION MODULE (HOTSPOTS & DRAWERS)
+               ========================================================================== -->
+            <section class="suites-10d-section" id="suites-10d">
+                <div class="container">
+                    <div class="section-header center">
+                        <span class="section-badge">INTERACTIVE 10D INSPECTION</span>
+                        <h2 class="section-title">Explore Every Detail, Drawer & Window</h2>
+                        <p class="header-desc">Hover or click on glowing 10D nodes to inspect inside drawers, window views, luxury brands, and interior dimensions.</p>
+                    </div>
+
+                    <!-- ROOM 1: MAHARAJA SUITE INTERACTIVE 10D EXPLORER -->
+                    <div class="room-10d-card">
+                        <div class="room-10d-viewer">
+                            <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=1600&auto=format&fit=crop" id="room1-img" alt="Maharaja Suite 10D View">
+                            <div class="view-mode-tag" id="room1-tag">MODE: OVERVIEW 360°</div>
+
+                            <!-- 10D HOTSPOT NODES -->
+                            <div class="hotspot node-drawer" style="top: 68%; left: 32%;" onclick="openHotspotModal('drawer')">
+                                <span class="hotspot-pulse"></span>
+                                <span class="hotspot-label"><i class="ri-archive-line"></i> Inspect Desk & Drawer</span>
+                            </div>
+
+                            <div class="hotspot node-window" style="top: 35%; left: 75%;" onclick="openHotspotModal('window')">
+                                <span class="hotspot-pulse"></span>
+                                <span class="hotspot-label"><i class="ri-camera-lens-line"></i> Drone Window View</span>
+                            </div>
+
+                            <div class="hotspot node-wardrobe" style="top: 48%; left: 15%;" onclick="openHotspotModal('wardrobe')">
+                                <span class="hotspot-pulse"></span>
+                                <span class="hotspot-label"><i class="ri-door-lock-line"></i> Open Royal Wardrobe</span>
+                            </div>
+
+                            <div class="hotspot node-bed" style="top: 62%; left: 55%;" onclick="openHotspotModal('bed')">
+                                <span class="hotspot-pulse"></span>
+                                <span class="hotspot-label"><i class="ri-hotel-bed-line"></i> Inspect Luxury Bedding</span>
+                            </div>
+                        </div>
+
+                        <div class="room-10d-sidebar">
+                            <span class="room-no">SUITE 01</span>
+                            <h3>The Maharaja Grand Pavilion</h3>
+                            <p class="room-desc">
+                                Equipped with 10D interactive controls. Click any glowing node on the room image to inspect drawer items, window perspectives, or wardrobe interiors.
+                            </p>
+
+                            <div class="room-features-list">
+                                <div class="feature-tag"><i class="ri-drag-drop-line"></i> 360° Interactive Hotspots</div>
+                                <div class="feature-tag"><i class="ri-fullscreen-line"></i> 3,500 Sq.Ft Living Space</div>
+                                <div class="feature-tag"><i class="ri-water-flash-line"></i> Heated Plunge Pool</div>
+                                <div class="feature-tag"><i class="ri-user-star-line"></i> 24/7 Private Butler</div>
+                            </div>
+
+                            <div class="room-pricing-box">
+                                <div class="price-val">$1,800 <span>/ night</span></div>
+                                <div class="contact-actions">
+                                    <a href="tel:+918081915068" class="btn-primary"><i class="ri-phone-line"></i> Call +91 8081915068</a>
+                                    <a href="https://wa.me/918081915068?text=I%20want%20to%20reserve%20The%20Maharaja%20Grand%20Suite" target="_blank" class="btn-whatsapp"><i class="ri-whatsapp-line"></i> WhatsApp</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ROOM 2: ROOFTOP & INFINITY POOL 10D EXPLORER -->
+                    <div class="room-10d-card reverse">
+                        <div class="room-10d-sidebar">
+                            <span class="room-no">AREA 02</span>
+                            <h3>The Royal Sunset Rooftop & Pool</h3>
+                            <p class="room-desc">
+                                Suspended above the desert skyline with heated infinity waters, marble cabanas, and evening candle banquets.
+                            </p>
+
+                            <div class="room-features-list">
+                                <div class="feature-tag"><i class="ri-sun-cloudy-line"></i> Panoramic Lake View</div>
+                                <div class="feature-tag"><i class="ri-goblet-line"></i> Private Cocktail Bar</div>
+                                <div class="feature-tag"><i class="ri-temp-hot-line"></i> Temperature Controlled</div>
+                            </div>
+
+                            <div class="room-pricing-box">
+                                <div class="price-val">$950 <span>/ private event</span></div>
+                                <div class="contact-actions">
+                                    <a href="tel:+918081915068" class="btn-primary"><i class="ri-phone-line"></i> Call +91 8081915068</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="room-10d-viewer">
+                            <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?q=80&w=1600&auto=format&fit=crop" id="room2-img" alt="Rooftop Pool 10D View">
+                            <div class="view-mode-tag">MODE: ROOFTOP DRONE CAM</div>
+
+                            <!-- 10D HOTSPOTS -->
+                            <div class="hotspot node-pool" style="top: 55%; left: 45%;" onclick="openHotspotModal('pool')">
+                                <span class="hotspot-pulse"></span>
+                                <span class="hotspot-label"><i class="ri-drop-line"></i> Plunge Pool Spec</span>
+                            </div>
+
+                            <div class="hotspot node-sky" style="top: 25%; left: 65%;" onclick="openHotspotModal('sky')">
+                                <span class="hotspot-pulse"></span>
+                                <span class="hotspot-label"><i class="ri-compass-3-line"></i> Drone Lake Panorama</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+
+            <!-- ==========================================================================
+               3. IMPERIAL EXPERIENCES & AMENITIES GRID
+               ========================================================================== -->
+            <section class="experiences-section" id="experiences">
+                <div class="container">
+                    <div class="section-header center">
+                        <span class="section-badge">ROYAL PRIVILEGES</span>
+                        <h2 class="section-title">Designed for Imperial Connoisseurs</h2>
+                    </div>
+
+                    <div class="exp-grid">
+                        <div class="exp-card">
+                            <div class="exp-icon"><i class="ri-flight-takeoff-line"></i></div>
+                            <h3>Helipad & Airport Transfer</h3>
+                            <p>Direct private helicopter landing on the palace roof with Rolls Royce Phantom transfers.</p>
+                        </div>
+
+                        <div class="exp-card">
+                            <div class="exp-icon"><i class="ri-restaurant-line"></i></div>
+                            <h3>Royal Durbar Dining</h3>
+                            <p>7-course royal Indian feast prepared by hereditary chefs using century-old palace recipes.</p>
+                        </div>
+
+                        <div class="exp-card">
+                            <div class="exp-icon"><i class="ri-sparkles-line"></i></div>
+                            <h3>Ayurvedic Spa & Healing</h3>
+                            <p>Traditional herbal therapies, copper bath soak, and organic sandalwood rituals.</p>
+                        </div>
+
+                        <div class="exp-card">
+                            <div class="exp-icon"><i class="ri-car-line"></i></div>
+                            <h3>Vintage Car Fleet</h3>
+                            <p>Escorted tours around Udaipur in 1930s restored vintage Bentleys and Cadillacs.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- ==========================================================================
+               4. DIRECT CONTACT & RESERVATION HOTLINE BANNER
+               ========================================================================== -->
+            <section class="reservation-banner" id="inquire">
+                <div class="banner-overlay"></div>
+                <div class="container banner-content">
+                    <span class="section-badge">DIRECT BOOKING & ENQUIRIES</span>
+                    <h2>Experience Royalty Like Never Before</h2>
+                    <p class="banner-sub">Speak directly with our Chief Concierge for personalized itineraries and suite reservations.</p>
+
+                    <div class="banner-contact-card">
+                        <div class="contact-item">
+                            <i class="ri-phone-line"></i>
+                            <div>
+                                <span>Direct Hotline</span>
+                                <h4>+91 8081915068</h4>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <i class="ri-whatsapp-line"></i>
+                            <div>
+                                <span>WhatsApp Instant Chat</span>
+                                <h4>+91 8081915068</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cta-btn-group">
+                        <a href="tel:+918081915068" class="btn-primary large"><i class="ri-phone-fill"></i> Call Now +91 8081915068</a>
+                        <a href="https://wa.me/918081915068?text=Hello,%20I%20want%20to%20book%20The%20Mahal%20Template" target="_blank" class="btn-secondary large"><i class="ri-whatsapp-line"></i> Chat on WhatsApp</a>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- ==========================================================================
+               5. FOOTER
+               ========================================================================== -->
+            <footer class="site-footer">
+                <div class="container footer-grid">
+                    <div class="footer-brand">
+                        <a href="#" class="brand-logo">
+                            <span class="logo-icon">❖</span>
+                            <span class="logo-text">MAHAL</span>
+                        </a>
+                        <p>The ultimate 10D interactive drone template designed for viral Instagram Reels, YouTube showcases, and ultra-high ticket website template sales.</p>
+                    </div>
+
+                    <div class="footer-links">
+                        <h4>Navigation</h4>
+                        <ul>
+                            <li><a href="#drone-experience">Drone Tour (8 Slides)</a></li>
+                            <li><a href="#suites-10d">10D Room Inspection</a></li>
+                            <li><a href="#experiences">Royal Amenities</a></li>
+                            <li><a href="#inquire">Hotline Reservation</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-links">
+                        <h4>Direct Concierge</h4>
+                        <ul>
+                            <li><i class="ri-phone-line"></i> <strong>+91 8081915068</strong></li>
+                            <li><i class="ri-whatsapp-line"></i> WhatsApp: +91 8081915068</li>
+                            <li><i class="ri-map-pin-line"></i> Udaipur, Rajasthan, India</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <div class="container flex-between">
+                        <p>&copy; 2026 THE MAHAL 10D DRONE TEMPLATE. Contact: +91 8081915068</p>
+                        <div class="social-links">
+                            <a href="#"><i class="ri-instagram-line"></i></a>
+                            <a href="#"><i class="ri-youtube-line"></i></a>
+                            <a href="https://wa.me/918081915068"><i class="ri-whatsapp-line"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+    </main>
+
+    <!-- 10D INTERACTIVE HOTSPOT MODAL POPUP -->
+    <div id="hotspotModal" class="hotspot-modal">
+        <div class="modal-overlay" onclick="closeHotspotModal()"></div>
+        <div class="modal-card">
+            <button class="modal-close-btn" onclick="closeHotspotModal()"><i class="ri-close-line"></i></button>
+            <div id="modal-content-body">
+                <!-- Dynamically populated via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- GSAP & Lenis Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+
+    <!-- Custom Script -->
+    <script src="main.js"></script>
+</body>
+
+</html>
